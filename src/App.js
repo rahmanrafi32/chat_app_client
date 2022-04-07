@@ -1,25 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+import {Stack} from "@mui/material";
+import ChatBody from "./components/ChatBody";
+import TabsLayout from "./components/TabsLayout";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <Stack
+            alignItems="center"
+            sx={{height: {xs: '70vh', md: '100vh'}, justifyContent: {xs: "start", md: "center"}}}>
+            <TabsLayout/>
+            <ChatBody/>
+        </Stack>
+    );
 }
 
 export default App;
