@@ -4,8 +4,7 @@ import {theme} from "../theme";
 import {LockOpen} from "@mui/icons-material";
 
 const StyledTextField = styled(TextField)(({theme}) => ({
-    margin: 10,
-    '& .MuiInputLabel-root':{
+    '& .MuiInputLabel-root': {
         color: theme.palette.secondary.main,
     },
     '& label.Mui-focused': {
@@ -27,25 +26,44 @@ const StyledTextField = styled(TextField)(({theme}) => ({
 
 const Login = () => {
     return (
-        <Grid container alignItems={"center"} justifyContent={"center"} sx={{
-            background: theme.palette.primary.main,
-            height: {xs: '90vh', md: '70vh'},
-            width: {xs: '100vw', md: '50vw'},
-            borderRadius: 2
-        }}>
-            <Grid items>
-                <Stack alignItems={"center"} justifyContent={"space-between"} sx>
-                    <LockOpen sx={{color: theme.palette.secondary.main, fontSize: 50}}/>
-                    <Typography variant={"h3"} sx={{color: theme.palette.secondary.main, p: 2}}>Login</Typography>
+        <Grid
+            container
+            alignItems={"center"}
+            justifyContent={"center"}
+            sx={{
+                background: theme.palette.primary.main,
+                height: {xs: '90vh', md: '55vh'},
+                width: {xs: '100vw', md: '40vw'},
+                borderRadius: 2
+            }}
+        >
+            <Grid items sx={{width: '50%'}}>
+                <Stack
+                    alignItems={"center"}
+                    justifyContent={"space-between"}
+                    spacing={3}>
+                    <LockOpen sx={{
+                        color: theme.palette.secondary.main,
+                        fontSize: 50
+                    }}/>
+                    <Typography variant={"h3"} sx={{color: theme.palette.secondary.main}}>Login</Typography>
                     <StyledTextField
                         label="Enter Your Email"
                         color="secondary"
+                        fullWidth
+                        helperText={"Please Enter a valid email"}
+                        // error
                     />
                     <StyledTextField
                         label="Enter Your Password"
                         color="secondary"
+                        fullWidth
+                        helperText={"Please Enter a valid email"}
+                        // error
                     />
                 </Stack>
+                <Typography variant={"caption"} sx={{color: theme.palette.secondary.main}}>Forget Password?</Typography>
+                <Typography variant={"body2"} sx={{color: theme.palette.secondary.main, textAlign:"center", mt:6}}>Don't have an account? Sign Up here.</Typography>
             </Grid>
 
         </Grid>
