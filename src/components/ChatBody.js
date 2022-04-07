@@ -1,11 +1,9 @@
 import React from 'react';
 import {theme} from "../theme";
-import {Avatar, Box, Grid, IconButton, InputBase, Stack, styled, Typography} from "@mui/material";
+import {Avatar, Box, Grid, IconButton, InputBase, Stack, Typography} from "@mui/material";
 import SearchField from "./SearchField";
 import ChatList from "./ChatList";
 import {Attachment, Delete, Send} from "@mui/icons-material";
-
-const StyledInputBase = styled(InputBase)(({theme}) => ({}));
 
 const ChatBody = () => {
     return (
@@ -91,7 +89,7 @@ const ChatBody = () => {
                     >
                         <Avatar/>
                         <Stack >
-                            <Typography variant={"body1"} sx={{backgroundColor:theme.palette.secondary.main, borderRadius:2, p:1}}>Hello how are you? 2</Typography>
+                            <Typography variant={"body1"} sx={{backgroundColor:theme.palette.secondary.light, borderRadius:2, p:1}}>Hello how are you? 2</Typography>
                             <Typography variant={"caption"}>a few minutes ago</Typography>
                         </Stack>
                     </Stack>
@@ -124,7 +122,7 @@ const ChatBody = () => {
                     >
                         <Avatar/>
                         <Stack >
-                            <Typography variant={"body1"} sx={{backgroundColor:theme.palette.secondary.main, borderRadius:2, p:1}}>Hello how are you? 2</Typography>
+                            <Typography variant={"body1"} sx={{backgroundColor:theme.palette.secondary.light, borderRadius:2, p:1}}>Hello how are you? 2</Typography>
                             <Typography variant={"caption"}>a few minutes ago</Typography>
                         </Stack>
                     </Stack>
@@ -157,7 +155,7 @@ const ChatBody = () => {
                     >
                         <Avatar/>
                         <Stack >
-                            <Typography variant={"body1"} sx={{backgroundColor:theme.palette.secondary.main, borderRadius:2, p:1}}>Hello how are you? 2</Typography>
+                            <Typography variant={"body1"} sx={{backgroundColor:theme.palette.secondary.light, borderRadius:2, p:1}}>Hello how are you? 2</Typography>
                             <Typography variant={"caption"}>a few minutes ago</Typography>
                         </Stack>
                     </Stack>

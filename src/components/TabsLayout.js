@@ -4,7 +4,7 @@ import {theme} from "../theme";
 
 const TabsLayout = () => {
     return (
-        <Tabs   >
+        <Tabs>
             <Tab label="Messages" disableRipple={true} sx={{color:theme.palette.primary.dark}}/>
             <Tab label="Friends" disableRipple={true} sx={{color:theme.palette.primary.dark}}/>
             <Tab label="Login" disableRipple={true} sx={{color:theme.palette.primary.dark}}/>

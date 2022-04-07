@@ -2,7 +2,7 @@ import React from 'react';
 import SearchIcon from "@mui/icons-material/Search";
 import {alpha, InputBase, styled} from "@mui/material";
 
-const Search = styled('div')(({theme}) => ({
+    const Search = styled('div')(({theme}) => ({
     position: 'relative',
     borderRadius: theme.shape.borderRadius,
     backgroundColor: alpha(theme.palette.common.white, 0.15),
@@ -17,7 +17,7 @@ const Search = styled('div')(({theme}) => ({
     },
 }));
 
-const SearchIconWrapper = styled('div')(({theme}) => ({
+    const SearchIconWrapper = styled('div')(({theme}) => ({
     padding: theme.spacing(0, 2),
     height: '100%',
     position: 'absolute',
