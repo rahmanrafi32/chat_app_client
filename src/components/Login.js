@@ -33,7 +33,7 @@ const Login = () => {
             sx={{
                 background: theme.palette.primary.main,
                 height: {xs: '90vh', md: '55vh'},
-                width: {xs: '100vw', md: '40vw'},
+                width: {xs: '95vw', md: '40vw'},
                 borderRadius: 2
             }}
         >
