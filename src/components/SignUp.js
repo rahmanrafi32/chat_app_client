@@ -1,27 +1,7 @@
 import React from 'react';
 import {theme} from "../theme";
-import {Button, Grid, Stack, styled, TextField, Typography} from "@mui/material";
-
-const StyledTextField = styled(TextField)(({theme}) => ({
-    '& .MuiInputLabel-root': {
-        color: theme.palette.secondary.main,
-    },
-    '& label.Mui-focused': {
-        color: theme.palette.secondary.main,
-    },
-    '& .MuiOutlinedInput-root': {
-        color: theme.palette.secondary.main,
-        '& fieldset': {
-            borderColor: theme.palette.secondary.light,
-        },
-        '&:hover fieldset': {
-            borderColor: theme.palette.secondary.main,
-        },
-        '&.Mui-focused fieldset': {
-            borderColor: theme.palette.secondary.main,
-        },
-    },
-}));
+import {Button, Grid, Stack, Typography} from "@mui/material";
+import {StyledTextField} from "../theme/StyledComponents";
 
 const SignUp = () => {
     return (
@@ -36,7 +16,7 @@ const SignUp = () => {
                 borderRadius: 2
             }}
         >
-            <Grid items sx={{width: {xs: '90%', md: '60%'}}}>
+            <Grid item sx={{width: {xs: '90%', md: '60%'}}}>
                 <Stack
                     alignItems={"center"}
                     spacing={2}>

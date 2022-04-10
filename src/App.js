@@ -15,8 +15,8 @@ function App() {
         >
             {/*<TabsLayout/>*/}
             {/*<ChatBody/>*/}
-            {/*<Login/>*/}
-            <SignUp/>
+            <Login/>
+            {/*<SignUp/>*/}
         </Stack>
     );
 }
