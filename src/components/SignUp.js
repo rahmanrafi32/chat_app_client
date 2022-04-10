@@ -39,13 +39,6 @@ const SignUp = () => {
                         />
                     </Stack>
                     <StyledTextField
-                        label="User Name"
-                        color="secondary"
-                        fullWidth
-                        helperText={"Please enter your last name"}
-                        // error
-                    />
-                    <StyledTextField
                         label="Mobile Number"
                         color="secondary"
                         fullWidth
