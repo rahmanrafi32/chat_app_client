@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useContext, useState} from 'react';
 import {Alert, Button, Grid, Snackbar, Stack, Typography} from "@mui/material";
 import {theme} from "../theme";
 import {LockOpen} from "@mui/icons-material";
@@ -6,9 +6,11 @@ import {StyledGrid, StyledTextField} from "../theme/StyledComponents";
 import {useMutation} from "@apollo/client";
 import {SIGN_IN} from "../graphql/Mutations/SignIn";
 import {Link, useNavigate} from "react-router-dom";
+import {userContext} from "../App";
 
 
 const Login = () => {
+    const [loggedUser, setLoggedUser] = useContext(userContext);
     const navigate = useNavigate();
     const [values, setValues] = useState({
         email: "",
@@ -22,11 +24,13 @@ const Login = () => {
     const [showSnackbar, setShowSnackbar] = useState(false);
 
     const [SignIn] = useMutation(SIGN_IN, {
-        onCompleted: data => {
+        onCompleted:async data => {
             localStorage.setItem("access token", data.signIn.access_token);
-            data.signIn && setShowSnackbar(true);
+            localStorage.setItem("refresh token", data.signIn.refresh_token);
+            await data.signIn && setShowSnackbar(true);
+            await data.signIn && setLoggedUser(true);
         },
-        onError: err =>  setErrors({
+        onError: err => setErrors({
             status: true,
             msg: err.graphQLErrors[0].extensions
         })
@@ -35,7 +39,7 @@ const Login = () => {
     const handleLogin = async () => {
         await setErrors({
             status: false,
-            msg:{}
+            msg: {}
         });
 
         const sign = await SignIn({
@@ -43,7 +47,6 @@ const Login = () => {
                 payload: values
             }
         });
-
         !sign.errors && navigate('/chat');
     };
 

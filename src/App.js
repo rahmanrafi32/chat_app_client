@@ -8,8 +8,11 @@ import {
     Route
 } from "react-router-dom";
 import PrivateRoute from "./components/PrivateRoute";
+import {createContext, useState} from "react";
 
+export const userContext = createContext({});
 function App() {
+    const [loggedUser, setLoggedUser] = useState(false);
     return (
         <Stack
             alignItems="center"
@@ -18,16 +21,17 @@ function App() {
                 height: {xs: '90vh', md: '100vh'},
             }}
         >
-            <BrowserRouter>
-                <Routes>
-                    <Route path="/" element={<Login/>}/>
-                    <Route path="/sign-up" element={<SignUp/>}/>
-                    <Route path="/*" element={<PrivateRoute/>}>
-                        <Route path="chat" element={<ChatBody/>}/>
-                    </Route>
-
-                </Routes>
-            </BrowserRouter>
+            <userContext.Provider value={[loggedUser, setLoggedUser]}>
+                <BrowserRouter>
+                    <Routes>
+                        <Route path="/" element={<Login/>}/>
+                        <Route path="/sign-up" element={<SignUp/>}/>
+                        <Route path="/*" element={<PrivateRoute/>}>
+                            <Route path="chat" element={<ChatBody/>}/>
+                        </Route>
+                    </Routes>
+                </BrowserRouter>
+            </userContext.Provider>
         </Stack>
     );
 }
