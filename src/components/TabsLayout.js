@@ -1,5 +1,5 @@
 import React from 'react';
-import {Divider, Tab, Tabs} from "@mui/material";
+import {Tab, Tabs} from "@mui/material";
 import {theme} from "../theme";
 
 const TabsLayout = () => {
