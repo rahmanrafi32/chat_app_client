@@ -4,7 +4,6 @@ import {userContext} from "../App";
 
 const PrivateRoute = () => {
     const [loggedUser] = useContext(userContext);
-    const auth = loggedUser;
-    return auth ? <Outlet/> : <Navigate to={'/'}/>;
+    return loggedUser ? <Outlet/> : <Navigate to={'/'}/>;
 }
 export default PrivateRoute;
